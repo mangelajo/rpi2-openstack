@@ -23,7 +23,7 @@ cd ..
 apt-get update
 apt-get -y install sudo python-pip python-dev libxml2-dev libxslt-dev libffi-dev
 pip install pbr
-apt-get install 
+
 cd neutron
 python setup.py install -O2 --prefix=/usr --exec-prefix=/usr
 mv /usr/etc/neutron /etc
@@ -34,6 +34,7 @@ python setup.py install -O2 --prefix=/usr --exec-prefix=/usr
 cp -rfp etc/nova /etc
 cd ..
 
+pip install crudini
 crudini --set /etc/neutron/neutron.conf agent root_helper ""
 
 #TODO: lots of stuff!!
